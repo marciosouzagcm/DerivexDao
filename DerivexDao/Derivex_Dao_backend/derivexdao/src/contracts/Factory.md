@@ -35,16 +35,19 @@ Além disso, o contrato Factory importa o contrato Exchange.
 
 event ExchangeCreated(address indexed tokenAddress, address indexed exchangeAddress);
     
-Eventos são um mecanismo para registrar atividades significativas no blockchain. Aqui, o **NewExchange** evento é emitido toda vez que um novo contrato de troca é criado. 
+Eventos são um mecanismo para registrar atividades significativas no blockchain. Aqui, o **ExchangeCreated** evento é emitido toda vez que um novo contrato de troca é criado. 
 Isso ajuda dApps e entidades externas a ouvir e reagir a esse evento.
 
 ### Mapeamentos:
 
 contract DerivexFactory {
+
     // Mapeia o endereço de um token para o endereço da respectiva exchange
     mapping(address => address) public tokenToExchange;
+    
     // Mapeia o endereço de uma exchange para o token correspondente
     mapping(address => address) public exchangeToToken;
+    
     // Mapeia um ID único para um token específico
     mapping(uint256 => address) public idToToken;
 
