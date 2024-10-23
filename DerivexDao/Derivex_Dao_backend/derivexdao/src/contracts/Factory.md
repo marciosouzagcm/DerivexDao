@@ -1,4 +1,5 @@
 #Objetivo Geral :
+
 O contrato Factory que mencionaste para a Derivex DAO , permite a criação de exchanges descentralizadas que lidem com tokens de governança ou tokens relacionados com derivativos .
 
 ##Descrição das Funções e Mapeamentos :
