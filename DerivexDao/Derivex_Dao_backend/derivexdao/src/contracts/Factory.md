@@ -2,9 +2,10 @@
 
 O contrato Factory funciona como o hub central do nosso DEX. Sua função principal é a criação de contratos individuais de Exchange para cada token ERC-20. Pense nisso como um registro público para todos os contratos de Exchange criados. Cada par token-exchange é único e rastreado no contrato Factory. Para essa estrutura descentralizada, se uma exchange para um token ERC-20 específico não existir, qualquer um pode configurá-la usando o contrato Factory.
 
-## Descrição das Funções e Mapeamentos :
+## Descrição das Funções:
 
-Cada contrato de Exchange é um reflexo direto de seu token ERC-20 associado. Suas principais funcionalidades podem ser divididas em dois componentes principais:
+Cada contrato de Exchange é um reflexo direto de seu token ERC-20 associado. 
+Suas principais funcionalidades podem ser divididas em dois componentes principais:
 
 ***Liquidity Pool (LP) :*** 
 O contrato da Exchange mantém reservas de ETH e seu respectivo token ERC-20. Os provedores de liquidez (usuários) podem contribuir para essas reservas depositando um valor equivalente de ETH e do token ERC-20 associado. Em troca, eles recebem "tokens LP" cunhados, também conhecidos como tokens ERC-20 que rastreiam sua contribuição relativa para o pool de liquidez. O pool de liquidez atua como o formador de mercado entre o par ETH-ERC20 subjacente e uma pequena taxa (0,30%) é retirada de cada negociação e adicionada de volta às reservas do pool de liquidez quando uma negociação ocorre. Isso atua como um incentivo para os provedores de liquidez, pois eles podem ganhar taxas quando as negociações ocorrem e sacar os ganhos quando queimam seus tokens LP.
@@ -20,17 +21,22 @@ Vamos analisá-lo para entender completamente sua funcionalidade.
 ### Pragmas e  Importações:
 
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.13;
 
 // Importa o contrato Exchange que será utilizado para as trocas
+
 import "./Exchange.sol";
 
-O contrato começa especificando a versão do compilador Solidity. Além disso, o contrato Factory importa o contrato Exchange.
+O contrato começa especificando a versão do compilador Solidity. 
+Além disso, o contrato Factory importa o contrato Exchange.
 
- // Evento que será emitido sempre que uma nova exchange for criada
-    event ExchangeCreated(address indexed tokenAddress, address indexed exchangeAddress);
+// Evento que será emitido sempre que uma nova exchange for criada
+
+event ExchangeCreated(address indexed tokenAddress, address indexed exchangeAddress);
     
-Eventos são um mecanismo para registrar atividades significativas no blockchain. Aqui, o **NewExchange** evento é emitido toda vez que um novo contrato de troca é criado. Isso ajuda dApps e entidades externas a ouvir e reagir a esse evento.
+Eventos são um mecanismo para registrar atividades significativas no blockchain. Aqui, o **NewExchange** evento é emitido toda vez que um novo contrato de troca é criado. 
+Isso ajuda dApps e entidades externas a ouvir e reagir a esse evento.
 
 ### Mapeamentos:
 
