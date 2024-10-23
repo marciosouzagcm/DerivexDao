@@ -14,7 +14,7 @@ Isso é crucial para o objetivo da Derivex DAO de criar um mercado automatizado 
 
 ### Gestão de Liquidez :
 
-O contrato permite que os usuários adicionem liquidez ao pool (ETH e tokens), recebendo em troca tokens de liquidez (LP tokens) , que representam a participação na pool.
+O contrato permite que os usuários adicionem liquidez ao pool (ETH e tokens), recebendo em troca tokens de liquidez (DVX tokens) , que representam a participação na pool.
 Ao remover liquidez, o usuário pode recuperar sua participação proporcional em ETH e tokens.
 
 ### Eventos e Transparência :
