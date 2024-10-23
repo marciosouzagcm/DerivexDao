@@ -30,6 +30,8 @@ pragma solidity ^0.8.13;
 
 import "./Exchange.sol";
 
+}
+
 
 O contrato começa especificando a versão do compilador Solidity. 
 Além disso, o contrato Factory importa o contrato Exchange.
