@@ -20,7 +20,6 @@ Vamos analisá-lo para entender completamente sua funcionalidade.
 
 ### Pragmas e  Importações:
 
-{
 
 // SPDX-License-Identifier: MIT
 
