@@ -1,7 +1,7 @@
 # DerivexDao (Organização Autônoma Descentralizada)
 
 Uma DAO (Organização Autônoma Descentralizada) é uma organização governada por regras codificadas em contratos inteligentes (smart Contracts) numa blockchain, o que permite uma estrutura descentralizada e transparente. Os membros de um DAO podem tomar decisões coletivas, como a alocação de fundos ou mudanças no projeto, geralmente por meio de um sistema de votação com tokens. Assim, uma DAO funciona sem uma autoridade central, sendo guiada pela participação comunitária e regras predefinidas, promovendo autonomia e confiança nas operações.
-As Organizações Autónomas Descentralizadas (DAO) são uma evolução dos modelos tradicionais de organização, aproveitando a tecnologia blockchain para criar sistemas mais transparentes, democráticos e resistentes à censura. Vamos desdobrar isso de forma simples e clara, tanto para quem está a começar quanto para quem já tem algum conhecimento.
+As Organizações Autónomas Descentralizadas (DAO) são uma evolução dos modelos tradicionais de organização, aproveitando a tecnologia blockchain para criar sistemas mais transparentes, democráticos e resistentes à censura.
 
 # Componentes principais de uma DAO:
  
@@ -52,3 +52,6 @@ Votação, onde detentores de tokens votam nas propostas. As mais votadas são a
 ***Gestão de comunidades:*** Comunidades online como a Friends With Benefits (FWB) usam DAOs para gerir a direção da comunidade e projetos sociais, culturais ou económicos.
 
 ***Arrecadação de fundos:*** DAOs são eficazes para criar fundos comunitários, como no caso da ConstitutionDAO, permitindo a pessoas de todo o mundo juntar recursos.
+
+## Conclusão
+As DAOs representam um novo modelo de organização, onde a descentralização e a democracia direta são priorizadas, eliminando a necessidade de um intermediário central. Apesar dos desafios, o futuro dos DAOs é promissor e já existem muitos casos de sucesso em áreas como finanças, arte digital (NFTs) e governança comunitária.
