@@ -28,16 +28,18 @@ Eventos como ***LiquidityAdded*** , ***LiquidityRemoved*** , ***TokenPurchased**
 ***constructor(address _tokenAddress):***
 Inicializa o contrato com o endereço do token DVX e configura DVX . OfactoryAddress é o endereço do contrato de Fábrica.
 
-- tokenAddress: Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
-- factoryAddress: É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
-- ERC20("DVX", DVX): Uma exchange cria tokens de liquidez como "UNI-V1" , que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
+***tokenAddress: *** Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
+***factoryAddress: *** É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
+***ERC20("DVX", DVX): *** Uma exchange cria tokens de liquidez como "UNI-V1" , que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
 
 ### 2. Funções de Preço (Cálculos de Trocas) :
 
 As funções de preço são essenciais para calcular quanto ETH ou tokens um usuário deve receber ao fazer swaps.
 
 Estas funções calculam quanto ETH ou tokens um usuário deve receber ao trocar, com base nas reservas da pool e utilizando uma fórmula de curva constante ( x * y = k), semelhante ao modelo de Automated Market Maker (AMM) do Uniswap .
+
 ***getAmount*** implementa uma taxa de 0,3% (997/1000), que é comum em pools de liquidez para provedores de crédito.
+
 
 ### 3. Adicionar e remover líquidez :
 
