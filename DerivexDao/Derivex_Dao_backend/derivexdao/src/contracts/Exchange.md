@@ -9,7 +9,8 @@ A utilização de tokens de liquidez ( DVX ) também incentiva a comunidade a fo
 
 ### Facilitação de Swaps (Troca de Tokens e funções de preço) :
 
-A função ***swapEthForTokens*** permite que os usuários troquem ETH por tokens (derivativos ou de governança). 
+A função ***swapEthForTokens*** permite que os usuários troquem ETH por tokens (derivativos ou de governança).
+
 Isso é crucial para o objetivo da Derivex DAO de criar um mercado automatizado para tokens de derivativos.
 
 ### Gestão de Liquidez :
