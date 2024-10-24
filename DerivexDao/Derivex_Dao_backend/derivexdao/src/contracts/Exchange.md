@@ -1,6 +1,6 @@
 # Contrato Exchange.sol:
 
-O contrato Exchange que apresentamos será o coração do seu Derivex DAO no que diz respeito à facilitação de swaps (troca de tokens) e à gestão de reservas de liquidez . 
+O contrato Exchange é o coração do seu Derivex DAO no que diz respeito à facilitação de swaps (troca de tokens) e à gestão de reservas de liquidez . 
 Este contrato é semelhante ao que exchanges descentralizadas como Uniswap utilizam para administrar pools de liquidez e trocas de tokens . 
 A arquitetura do contrato parece bem estruturada para lidar com essas funcionalidades essenciais.
 A utilização de tokens de liquidez ( DVX ) também incentiva a comunidade a fornecer liquidez, beneficiando-se das taxas de transação.
