@@ -14,31 +14,51 @@ Isso é crucial para o objetivo da Derivex DAO de criar um mercado automatizado 
 
 ### Gestão de Liquidez :
 
-O contrato permite que os usuários adicionem liquidez ao pool (ETH e tokens), recebendo em troca tokens de liquidez (DVX tokens) , que representam a participação na pool.
-Ao remover liquidez, o usuário pode recuperar sua participação proporcional em ETH e tokens.
+Cada contrato de Exchange é um reflexo direto de seu token ERC-20 associado. Suas principais funcionalidades podem tem como componentes:
+
+***Liquidity Pool (LP):*** 
+
+O contrato da Exchange mantém reservas de ETH e seu respectivo token ERC-20. Os provedores de liquidez (usuários) podem contribuir para essas reservas depositando um valor equivalente de ETH e do token ERC-20 associado. Em troca, eles recebem "tokens LP" cunhados, também conhecidos como tokens ERC-20 que rastreiam sua contribuição relativa para o pool de liquidez. 
+O pool de liquidez atua como o formador de mercado entre o par ETH-ERC20 subjacente e uma pequena taxa (0,30%) é retirada de cada negociação e adicionada de volta às reservas do pool de liquidez quando uma negociação ocorre. Isso atua como um incentivo para os provedores de liquidez, pois eles podem ganhar taxas quando as negociações ocorrem e sacar os ganhos quando queimam seus tokens LP.
+
+***Automated Market Maker (AMM):*** 
+
+O contrato de câmbio serve como facilitador de transações entre o par ETH e ERC-20, em qualquer direção. Ele permite que os usuários troquem tokens alterando as reservas de liquidez do par, impactando assim o preço do token a cada transação. Quanto maior a transação em relação ao tamanho total das reservas, mais significativo será o deslizamento de preço.
+Utilizam algoritmos e pools de liquidez para determinar preços de negociação, não precisar de um livro de ordens tradicional. 
+Em vez disso, eles contam com contratos inteligentes para calcular automaticamente os preços de negociação com base em um algoritmo predeterminado e na proporção de tokens em um pool de liquidez. 
+AMMs não exigem que compradores e vendedores sejam correspondidos diretamente; isso os torna mais eficientes do que as trocas tradicionais de livros de ordens.
 
 ### Eventos e Transparência :
 
-Eventos como ***LiquidityAdded*** , ***LiquidityRemoved*** , ***TokenPurchased*** , e ***TokenSold*** garantem transparência, permitindo que a comunidade da Derivex DAO acompanhe todas as operações de negociação
+Eventos como ***LiquidityAdded*** , ***LiquidityRemoved*** , ***TokenPurchased*** , e ***TokenSold*** garantem transparência, permitindo que a comunidade da Derivex DAO acompanhe todas as operações de negociação.
 
 ## Análise preliminar do Contrato :
 
 ### 1. Construtor e Variáveis ​​Imutáveis:
 
 ***constructor(address _tokenAddress):***
-Inicializa o contrato com o endereço do token DVX e configura DVX . OfactoryAddress é o endereço do contrato de Fábrica.
+Inicializa o contrato com o endereço do token DVX e configura DVX . 
 
-***tokenAddress:*** Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
+***factoryAddress*** 
+É o endereço do contrato de Fábrica.
 
-***factoryAddress:*** É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
+***tokenAddress:*** 
+Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
 
-***ERC20("DVX", DVX):*** Uma exchange cria tokens de liquidez como "UNI-V1" , que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
+***factoryAddress:*** 
+É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
+
+***ERC20("DVX", DVX):*** 
+
+Uma exchange cria tokens de liquidez, que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
+
 
 ### 2. Funções de Preço (Cálculos de Trocas) :
 
-As funções de preço são essenciais para calcular quanto ETH ou tokens um usuário deve receber ao fazer swaps.
 
-Estas funções calculam quanto ETH ou tokens um usuário deve receber ao trocar, com base nas reservas da pool e utilizando uma fórmula de curva constante ( x * y = k), semelhante ao modelo de Automated Market Maker (AMM) do Uniswap .
+***Automated Market Maker (AMM):*** 
+O contrato de câmbio serve como facilitador de transações entre o par ETH e ERC-20, em qualquer direção. Ele permite que os usuários troquem tokens alterando as reservas de liquidez do par, impactando assim o preço do token a cada transação. Quanto maior a transação em relação ao tamanho total das reservas, mais significativo será o deslizamento de preço. O Uniswap usa uma fórmula de criação de mercado de "produto constante", que define a taxa de câmbio com base no tamanho da negociação e nas reservas atuais de ETH e ERC-20.
+
 
 ***getAmount*** implementa uma taxa de 0,3% (997/1000), que é comum em pools de liquidez para provedores de crédito.
 
@@ -59,6 +79,7 @@ Os tokens de liquidez são queimados para calcular e devolver os ativos à carte
 ### 4. Funções de Swap (Troca de Tokens) :
 
 ***swapEthForTokens :*** Troca de ETH por tokens no pool. O usuário envia ETH, recebe tokens, e o evento TokenPurchased é emitido.
+
 ***tokenForEthSwap :*** Troca de tokens por ETH. O usuário envia tokens, recebe ETH, e o evento TokenSold é emitido.
 
 ### 5. Proteções contra Ataques de Reentrância :
