@@ -19,26 +19,29 @@ Imagina um clube de investimento, em vez de um grupo de pessoas eleger um gestor
 Comunidade online, pode-se criar DAOs para gerir comunidades ou projetos open-source. Cada participante com tokens pode sugerir melhorias e votar em como o projeto deve avançar.
 Como funciona uma DAO?
 Criação das regras (por exemplo, como os votos funcionam, como os fundos são geridos), que são codificadas em contratos inteligentes.
-Financiamento para uma DAO começar a funcionar, os membros precisam de adquirir tokens de governança, que lhes dão poder de voto.
+Financiamento para uma DAO começar a funcionar, os membros precisam adquirir tokens de governança, que lhes dão poder de voto.
 Participação e Propostas onde qualquer membro da DAO pode criar propostas, que vão desde a alocação de fundos a novas iniciativas.
 Votação, onde detentores de tokens votam nas propostas. As mais votadas são automaticamente executadas pelos contratos inteligentes.
 
 ## Benefícios de uma DAO:
+
 ***Democracia direta:*** Cada membro tem um voto e participa ativamente na tomada de decisões.
 
 ***Transparência:*** Como os dados estão na blockchain, qualquer pessoa pode verificar as transações e as regras.
 
 ***Segurança:*** Não depende de intermediários, pois os contratos inteligentes executam as ações automaticamente.
 
+
 ## Desafios de uma DAO:
-***Governança complexa:*** Pode ser difícil gerir eficazmente as decisões, especialmente se os membros forem muito diversos ou houver interesses conflitantes.
+
+***Governança complexa:*** Pode ser difícil gerir eficazmente as decisões, especialmente se os membros forem muito diversos e interesses conflitantes.
 
 ***Problemas de segurança:*** Se o código do smart contract tiver falhas, pode ser explorado (como aconteceu com a famosa DAO hack de 2016).
 
 ***Escalabilidade:*** À medida que mais membros participam, pode ser difícil tomar decisões rapidamente.
 
 ## Exemplos de DAOs já implementadas:
-***MakerDAO:*** É uma das DAOs mais conhecidas. Governa o DAI, uma criptomoeda estável (stablecoin) descentralizada. A comunidade que possui o token MKR vota em como manter a estabilidade do DAI, ajustar taxas de juro, e gerir colaterais.
+***MakerDAO:*** É uma das DAOs mais conhecidas. Governa o DAI, uma criptomoeda estável (stablecoin) descentralizada. A comunidade que possui o token MKR vota em como manter a estabilidade do DAI, ajustar taxas de juros, e gerir colaterais.
 
 ***Uniswap:*** Esta plataforma descentralizada de troca de criptomoedas é gerida por uma DAO. Os detentores do token UNI votam em melhorias na plataforma, como a implementação de novos pares de trading ou a alocação de fundos.
 
@@ -47,6 +50,7 @@ Votação, onde detentores de tokens votam nas propostas. As mais votadas são a
 ***ConstitutionDAO:*** Foi uma organização criada com o objetivo de comprar uma cópia da Constituição dos Estados Unidos num leilão. Embora a DAO não tenha conseguido ganhar o leilão, foi um exemplo inovador de como um grupo descentralizado pode reunir fundos e tentar alcançar um objetivo comum.
 
 ## Casos de Uso Interessantes:
+
 ***Financiamento de Projetos:*** DAOs são usadas para financiar startups e iniciativas de forma descentralizada, onde investidores têm voz ativa sobre o que acontece com o seu dinheiro.
 
 ***Gestão de comunidades:*** Comunidades online como a Friends With Benefits (FWB) usam DAOs para gerir a direção da comunidade e projetos sociais, culturais ou económicos.
