@@ -22,6 +22,7 @@ Vamos analisá-lo para entender completamente sua funcionalidade.
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
+
 // Importa o contrato Exchange que será utilizado para as trocas
 import "./Exchange.sol";
 
