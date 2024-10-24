@@ -84,7 +84,11 @@ Isso permite monitorar e auditar todas as exchanges criadas.
         return address(exchange);
     }
 
-A createNewExchange função facilita a criação de um novo contrato de troca para um token fornecido. Ela verifica se o endereço do token é válido e se o endereço para o token ERC-20 fornecido já existe. Então, o contrato Factory cria uma nova instância do Exchange contrato com o endereço do token fornecido. Depois, o novo endereço de troca e seu token associado são armazenados nos respectivos mapeamentos e exchangeArray. No final, o ExchangeCreated evento é emitido e o endereço de troca do contrato recém-criado é retornado.
+A **Function createNewExchange** facilita a criação de um novo contrato de troca para um token fornecido. 
+Ela verifica se o endereço do token é válido e se o endereço para o token ERC-20 fornecido já existe. 
+Então, o contrato Factory cria uma nova instância do Exchange contrato com o endereço do token fornecido. 
+Depois, o novo endereço de troca e seu token associado são armazenados nos respectivos mapeamentos e exchangeArray. 
+No final, o ExchangeCreated evento é emitido e o endereço de troca do contrato recém-criado é retornado.
 
 ### Funções de Consulta:
 
