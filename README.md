@@ -54,11 +54,12 @@ Para captar recursos iniciais, a **Derivex DAO** ira realizar uma **ICO** (Ofert
   
 - **Alocação de Tokens**:
   - 50% dos tokens **DVX** são alocados para os participantes da ICO.
-  - 20% são reservados para a equipa fundadora e os primeiros desenvolvedores.
+  - 20% são reservados para a equipe fundadora e os primeiros desenvolvedores.
   - 20% são reservados para a tesouraria da DAO e serão usados para futuros desenvolvimentos e expansão.
   - 10% são alocados para recompensas da comunidade, como incentivação de governança e atividades de staking.
 
 ### Fase 2: **Participação em Pools de Liquidez**
+
 A **Derivex DAO** pode oferecer aos seus membros a oportunidade de fornecer liquidez em plataformas descentralizadas de derivativos como **Uniswap** ou **Balancer**.
 
 - **Liquidity Mining**: Os membros que fornecem liquidez para os pares de tokens da DAO (por exemplo, **ETH/DVX** ou **USDC/DVX**) receberão recompensas na forma de mais tokens **DVX**.
@@ -66,7 +67,8 @@ A **Derivex DAO** pode oferecer aos seus membros a oportunidade de fornecer liqu
 - **Comissões de Trading**: As comissões geradas por operações de trading nas pools de liquidez da DAO podem ser partilhadas com os membros que fornecerem liquidez, criando uma fonte de rendimento passivo.
 
 ### Fase 3: **Parceiros Institucionais e Fundos de Investimento**
-A longo prazo, a **Derivex DAO** pode atrair parcerias com fundos de investimento ou instituições financeiras que desejem participar no trading automatizado de derivativos. Isso poderá incluir:
+
+A longo prazo, a **Derivex DAO** pode atrair parcerias com fundos de investimento ou instituições financeiras que queiram participar do trading automatizado de derivativos. Isso poderá incluir:
 
 - **Venda Privada de Tokens**: Oferecer um número limitado de tokens **DVX** a parceiros estratégicos, como fundos **DeFi** ou **VCs** (venture capital), em troca de capital ou serviços tecnológicos.
   
