@@ -19,7 +19,7 @@ Vale a pena notar que um ativo (por exemplo, token ERC-20) pode sofrer alteraç�
 Vamos analisá-lo para entender completamente sua funcionalidade.
 
 ### Pragmas e  Importações:
-
+  {
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
