@@ -69,6 +69,7 @@ Então, sob as variáveis ​​de estado, vamos adicionar os eventos abaixo.
 
 // Inicializa o contrato com o token DVX e o Factory, e define os tokens de liquidez como DVX-LP
     constructor(address _tokenAddress) ERC20("DVX-LP", "DVX-LP") {
+    
         require(_tokenAddress != address(0), "endereço do contrato");  // Evita endereços invalidos
         tokenAddress = _tokenAddress;  
         factoryAddress = msg.sender;  // Define o contrato Factory que criou esta Exchange
