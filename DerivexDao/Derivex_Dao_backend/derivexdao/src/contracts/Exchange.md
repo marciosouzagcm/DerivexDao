@@ -77,3 +77,4 @@ Os tokens de liquidez são queimados para calcular e devolver os ativos à carte
 
 O uso de **Funcion nonReentrant** é proteção contra ataques de reentrância, onde um atacante pode tentar abusar da lógica de swap ou monetária para esgotar fundos da pool.
 
+
