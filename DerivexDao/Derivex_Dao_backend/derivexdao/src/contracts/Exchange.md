@@ -7,7 +7,7 @@ A utilização de tokens de liquidez ( DVX ) também incentiva a comunidade a fo
 
 ## Função do Contrato Exchange :
 
-### Facilitação de Swaps (Troca de Tokens) :
+### Facilitação de Swaps (Troca de Tokens e funções de preço) :
 
 A função ***swapEthForTokens*** permite que os usuários troquem ETH por tokens (derivativos ou de governança). 
 Isso é crucial para o objetivo da Derivex DAO de criar um mercado automatizado para tokens de derivativos.
@@ -27,6 +27,8 @@ O contrato de câmbio serve como facilitador de transações entre o par ETH e E
 Utilizam algoritmos e pools de liquidez para determinar preços de negociação, não precisar de um livro de ordens tradicional. 
 Em vez disso, eles contam com contratos inteligentes para calcular automaticamente os preços de negociação com base em um algoritmo predeterminado e na proporção de tokens em um pool de liquidez. 
 AMMs não exigem que compradores e vendedores sejam correspondidos diretamente; isso os torna mais eficientes do que as trocas tradicionais de livros de ordens.
+
+***getAmount*** implementa uma taxa de 0,3%, que é comum em pools de liquidez para provedores de crédito.
 
 ### Eventos e Transparência :
 
@@ -53,11 +55,7 @@ Este é o endereço do token que será trocado na exchange. Ele é imutável, ga
 Uma exchange cria tokens de liquidez, que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
 
 
-### 2. Funções de Preço (Cálculos de Trocas) :
 
-
-***Automated Market Maker (AMM):*** 
-O contrato de câmbio serve como facilitador de transações entre o par ETH e ERC-20, em qualquer direção. Ele permite que os usuários troquem tokens alterando as reservas de liquidez do par, impactando assim o preço do token a cada transação. Quanto maior a transação em relação ao tamanho total das reservas, mais significativo será o deslizamento de preço. O Uniswap usa uma fórmula de criação de mercado de "produto constante", que define a taxa de câmbio com base no tamanho da negociação e nas reservas atuais de ETH e ERC-20.
 
 
 ***getAmount*** implementa uma taxa de 0,3% (997/1000), que é comum em pools de liquidez para provedores de crédito.
