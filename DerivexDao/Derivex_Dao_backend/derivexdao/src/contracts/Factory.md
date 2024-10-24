@@ -1,6 +1,6 @@
 # Objetivo Geral :
 
-O contrato Factory funciona como o hub central do nosso DEX. Sua função principal é a criação de contratos individuais de Exchange para cada token ERC-20. Pense nisso como um registro público para todos os contratos de Exchange criados. Cada par token-exchange é único e rastreado no contrato Factory. Para essa estrutura descentralizada, se uma exchange para um token ERC-20 específico não existir, qualquer um pode configurá-la usando o contrato Factory.
+O contrato Factory funciona como o hub central do nosso DEX. Sua função principal é a criação de contratos individuais de Exchange para cada token ERC-20. Pense nisso como um registro público para todos os contratos de Exchange criados. 
 
 ## Descrição das Funções:
 
@@ -20,23 +20,16 @@ Vamos analisá-lo para entender completamente sua funcionalidade.
 
 ### Pragmas e  Importações:
 
-
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.13;
-
 // Importa o contrato Exchange que será utilizado para as trocas
-
 import "./Exchange.sol";
-
-}
 
 
 O contrato começa especificando a versão do compilador Solidity. 
 Além disso, o contrato Factory importa o contrato Exchange.
 
 // Evento que será emitido sempre que uma nova exchange for criada
-
 event ExchangeCreated(address indexed tokenAddress, address indexed exchangeAddress);
     
 Eventos são um mecanismo para registrar atividades significativas no blockchain. Aqui, o **ExchangeCreated** evento é emitido toda vez que um novo contrato de troca é criado. 
