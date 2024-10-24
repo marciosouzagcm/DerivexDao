@@ -38,49 +38,42 @@ Eventos como ***LiquidityAdded*** , ***LiquidityRemoved*** , ***TokenPurchased**
 
 ### 1. Construtor e Variáveis ​​Imutáveis:
 
-***constructor(address _tokenAddress):***
+**Função constructor(address _tokenAddress):**
 Inicializa o contrato com o endereço do token DVX e configura DVX . 
 
-***factoryAddress*** 
+**Função factoryAddress** 
 É o endereço do contrato de Fábrica.
 
-***tokenAddress:*** 
+**Função tokenAddress:** 
 Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
 
-***factoryAddress:*** 
+**Função factoryAddress:**
 É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
 
 ***ERC20("DVX", DVX):*** 
 
 Uma exchange cria tokens de liquidez, que são distribuídos a quem adiciona liquidez. Esses tokens representam a participação do usuário no pool.
 
+### 2. Adicionar e remover líquidez :
 
-
-
-
-***getAmount*** implementa uma taxa de 0,3% (997/1000), que é comum em pools de liquidez para provedores de crédito.
-
-
-### 3. Adicionar e remover líquidez :
-
-***Adicionar Liquidez:***
+**Função addLiquidity**
 
 - Adicionar Liquidez : Esta função permite que os usuários adicionem ETH e tokens ao pool em troca de tokens de liquidez.
 - Primeira adição : Se não houver liquidez na pool, é calculado o valor total depositado e são emitidos tokens de liquidez fornecidos.
 - Adição subsequente : Se já houver liquidez, é calculado o valor adicional a ser emitido com base na proporção da pool.
 
-***Removedor Liquidez:***
+**function removeLiquidity**
 
 Esta função permite que os usuários retirem ETH e tokens da pool em proporção ao montante dos tokens de crédito que possuem. 
 Os tokens de liquidez são queimados para calcular e devolver os ativos à carteira do usuário.
 
 ### 4. Funções de Swap (Troca de Tokens) :
 
-***swapEthForTokens :*** Troca de ETH por tokens no pool. O usuário envia ETH, recebe tokens, e o evento TokenPurchased é emitido.
+**function swapEthForTokens:** Troca de ETH por tokens no pool. O usuário envia ETH, recebe tokens, e o evento TokenPurchased é emitido.
 
-***tokenForEthSwap :*** Troca de tokens por ETH. O usuário envia tokens, recebe ETH, e o evento TokenSold é emitido.
+**function tokenForEthSwap:** Troca de tokens por ETH. O usuário envia tokens, recebe ETH, e o evento TokenSold é emitido.
 
 ### 5. Proteções contra Ataques de Reentrância :
 
-O uso de ***ReentrancyGuard*** garantia de proteção contra ataques de reentrância, onde um atacante pode tentar abusar da lógica de swap ou monetária para esgotar fundos da pool.
+O uso de **Funcion nonReentrant** é proteção contra ataques de reentrância, onde um atacante pode tentar abusar da lógica de swap ou monetária para esgotar fundos da pool.
 
