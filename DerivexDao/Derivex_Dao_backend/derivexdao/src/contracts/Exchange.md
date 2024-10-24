@@ -28,26 +28,26 @@ Utilizam algoritmos e pools de liquidez para determinar preços de negociação,
 Em vez disso, eles contam com contratos inteligentes para calcular automaticamente os preços de negociação com base em um algoritmo predeterminado e na proporção de tokens em um pool de liquidez. 
 AMMs não exigem que compradores e vendedores sejam correspondidos diretamente; isso os torna mais eficientes do que as trocas tradicionais de livros de ordens.
 
-***getAmount*** implementa uma taxa de 0,3%, que é comum em pools de liquidez para provedores de crédito.
+**Function getAmount** implementa uma taxa de 0,3%, que é comum em pools de liquidez para provedores de crédito.
 
 ### Eventos e Transparência :
 
-Eventos como ***LiquidityAdded*** , ***LiquidityRemoved*** , ***TokenPurchased*** , e ***TokenSold*** garantem transparência, permitindo que a comunidade da Derivex DAO acompanhe todas as operações de negociação.
+Eventos como **LiquidityAdded** , **LiquidityRemoved** , **TokenPurchased** , e **TokenSold** garantem transparência, permitindo que a comunidade da Derivex DAO acompanhe todas as operações de negociação.
 
 ## Análise preliminar do Contrato :
 
 ### 1. Construtor e Variáveis ​​Imutáveis:
 
-**Função constructor(address _tokenAddress):**
+**Function constructor(address _tokenAddress):**
 Inicializa o contrato com o endereço do token DVX e configura DVX . 
 
-**Função factoryAddress** 
+**Function factoryAddress** 
 É o endereço do contrato de Fábrica.
 
-**Função tokenAddress:** 
+**Function tokenAddress:** 
 Este é o endereço do token que será trocado na exchange. Ele é imutável, garantindo que a exchange só suporte um token específico.
 
-**Função factoryAddress:**
+**Function factoryAddress:**
 É o endereço do contrato de fábrica que cria essa troca, garantindo rastreamento da origem.
 
 ***ERC20("DVX", DVX):*** 
@@ -56,22 +56,22 @@ Uma exchange cria tokens de liquidez, que são distribuídos a quem adiciona liq
 
 ### 2. Adicionar e remover líquidez :
 
-**Função addLiquidity**
+**Function addLiquidity**
 
 - Adicionar Liquidez : Esta função permite que os usuários adicionem ETH e tokens ao pool em troca de tokens de liquidez.
 - Primeira adição : Se não houver liquidez na pool, é calculado o valor total depositado e são emitidos tokens de liquidez fornecidos.
 - Adição subsequente : Se já houver liquidez, é calculado o valor adicional a ser emitido com base na proporção da pool.
 
-**function removeLiquidity**
+**Function removeLiquidity**
 
 Esta função permite que os usuários retirem ETH e tokens da pool em proporção ao montante dos tokens de crédito que possuem. 
 Os tokens de liquidez são queimados para calcular e devolver os ativos à carteira do usuário.
 
 ### 4. Funções de Swap (Troca de Tokens) :
 
-**function swapEthForTokens:** Troca de ETH por tokens no pool. O usuário envia ETH, recebe tokens, e o evento TokenPurchased é emitido.
+**Function swapEthForTokens:** Troca de ETH por tokens no pool. O usuário envia ETH, recebe tokens, e o evento TokenPurchased é emitido.
 
-**function tokenForEthSwap:** Troca de tokens por ETH. O usuário envia tokens, recebe ETH, e o evento TokenSold é emitido.
+**Function tokenForEthSwap:** Troca de tokens por ETH. O usuário envia tokens, recebe ETH, e o evento TokenSold é emitido.
 
 ### 5. Proteções contra Ataques de Reentrância :
 
